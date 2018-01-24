@@ -58,5 +58,5 @@ ${color2}Download ${color0}${alignr}${downspeedf eno1} KiB/s
 ${downspeedgraph eno1 80,}
 ${color2}Upload ${color0}${alignr}${upspeedf eno1} KiB/s 
 ${upspeedgraph eno1 80,} 
-${color2}Local${color0}${alignr}${exec hostname -I}
+${color2}Local${color0}${alignr}${exec hostname -I | awk '{print $1}'} 
 ${color2}Public${color0}${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
